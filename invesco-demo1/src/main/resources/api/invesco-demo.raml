@@ -1,0 +1,33 @@
+#%RAML 1.0
+version: v1
+title:  Hello API
+
+traits:
+  client-id-required:
+    headers:
+      client_id:
+        type: string
+      client_secret:
+        type: string
+  applicationName-required:
+    queryParameters:
+      applicationName:
+        type: string
+
+/1.0/hello:
+ get:
+   is: [client-id-required]
+   responses: 
+     
+    200:
+       body: 
+         application/json:  
+/2.0/hello:
+ get:
+   is: [client-id-required]
+   responses: 
+     
+    200:
+       body: 
+         application/json:   
+         application/xml:
